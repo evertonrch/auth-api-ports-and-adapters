@@ -1,6 +1,10 @@
 import dotenv from "dotenv"
 dotenv.config()
 
-import menuPrincipal from "./app/menu/menu-principal";
+import express from "express"
 
-menuPrincipal()
+const app = express()
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+app.listen(process.env.API_PORT ?? 3000)
