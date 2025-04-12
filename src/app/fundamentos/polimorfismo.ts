@@ -15,7 +15,7 @@ export default async function polimorfismo() {
         TerminalUtil.exibirChaveValor("Velocidade Máxima: ", `${carro.velocidadeMaxima} km/h`)
 
         if(carro.velocidadeAtual === carro.velocidadeMaxima) {
-            TerminalUtil.exibeVelocidadeAtualComLimite("Velocidade Atual: ", `${carro.velocidadeAtual} km/h`)
+            TerminalUtil.exibirChaveValor("Velocidade Atual: ", `${carro.velocidadeAtual} km/h`, "red")
         } else {
             TerminalUtil.exibirChaveValor("Velocidade Atual: ", `${carro.velocidadeAtual} km/h`)
         }
