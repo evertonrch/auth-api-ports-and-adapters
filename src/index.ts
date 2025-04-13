@@ -2,17 +2,17 @@ import dotenv from "dotenv"
 dotenv.config()
 
 import express from "express"
-import RegistrarUsuarioController from "./external/api/registrar-usuario-controller"
+import RegistrarUsuarioController from "./external/api/registrar-usuario.controller"
 import RegistrarUsuario from "./core/usuario/service/registrar-usuario"
 import RepositorioUsuarioPg from "./external/database/repositorio-usuario-pg"
-import BcryptSenhaCripto from "./external/security/bcrypt-senha-cripto"
+import BcryptSenhaCripto from "./external/security/bcrypt-senha.cripto"
 import LoginUsuario from "./core/usuario/service/login-usuario"
-import LoginUsuarioController from "./external/api/login-usuario-controller"
+import LoginUsuarioController from "./external/api/login-usuario.controller"
 import ValidatorImpl from "./external/validator/validator-impl"
 import ObterProdutoPorId from "./core/produto/service/obter-produto-por-id"
-import ObterProdutoPorIdController from "./external/api/obter-produto-por-id-controller"
-import UsuarioMiddleware from "./external/api/usuario-middleware"
-import ListarUsuariosController from "./external/api/listar-usuarios-controller"
+import ObterProdutoPorIdController from "./external/api/obter-produto-por-id.controller"
+import UsuarioMiddleware from "./external/api/usuario.middleware"
+import ListarUsuariosController from "./external/api/listar-usuarios.controller"
 import ListarUsuarios from "./core/usuario/service/listar-usuarios"
 
 const app = express()
