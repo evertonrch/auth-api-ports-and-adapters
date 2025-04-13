@@ -20,7 +20,7 @@ export default class RegistrarUsuario implements CasoDeUso<Usuario, void> {
             id: Id.gerarHash(),
             nome: entrada.nome,
             email: entrada.email,
-            senha: this.provedorCripto.criptografar(entrada.senha)
+            senha: this.provedorCripto.criptografar(entrada.senha!)
         }
 
         this.repositorio.inserir(novoUsuario)        
