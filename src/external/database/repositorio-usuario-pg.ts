@@ -12,10 +12,14 @@ export default class RepositorioUsuarioPg implements RepositorioUsuario {
     async obterPorEmail(email: string): Promise<Usuario | null> {
         const sql = "SELECT * FROM usuarios WHERE email = $1"
         const usuario = await db.oneOrNone(sql, [email])
-
+        
         if(!usuario) return null
         
         return usuario
     }
-
+    
+    async listar(): Promise<Usuario[]> {
+        const sql = "SELECT * FROM usuarios"
+        return await db.query(sql)
+    }
 }

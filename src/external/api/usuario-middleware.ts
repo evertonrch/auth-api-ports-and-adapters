@@ -6,6 +6,7 @@ import Erros from "@/core/shared/Erros"
 
 export default function UsuarioMiddleware(repositorio: RepositorioUsuario) {
     return async (req: Request, res: Response, next: NextFunction) => {
+        console.log("sdfsdf")
         const acessoNegado = () => res.status(403).json({message: Erros.ACESSO_NEGADO})
 
         const token = req.headers.authorization?.replace("Bearer ", "")
