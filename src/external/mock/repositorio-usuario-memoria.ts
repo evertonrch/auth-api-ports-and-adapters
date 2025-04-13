@@ -18,8 +18,13 @@ export default class RepositorioUsuarioMemoria implements RepositorioUsuario {
         const usuarios = RepositorioUsuarioMemoria.usuarios
         return usuarios.find(usuario => usuario.email === email) ?? null
     }
-
+    
     async listar(): Promise<Usuario[]> {
         return RepositorioUsuarioMemoria.usuarios
+    }
+
+    async deletarTudo(): Promise<void> {
+        const usuarios = RepositorioUsuarioMemoria.usuarios
+        usuarios.splice(0, usuarios.length)
     }
 }

@@ -14,6 +14,8 @@ import ObterProdutoPorIdController from "./external/api/obter-produto-por-id.con
 import UsuarioMiddleware from "./external/api/usuario.middleware"
 import ListarUsuariosController from "./external/api/listar-usuarios.controller"
 import ListarUsuarios from "./core/usuario/service/listar-usuarios"
+import DeletarUsuarios from "./core/usuario/service/deletar-usuarios"
+import DeletarUsuariosController from "./external/api/deletar-usuarios.controller"
 
 const app = express()
 app.use(express.json())
@@ -26,16 +28,18 @@ const validadorDados = new ValidatorImpl()
 // casos de uso
 const registrarUsuario = new RegistrarUsuario(repositorioUsuario, provedorCripto) 
 const loginUsuario = new LoginUsuario(repositorioUsuario, provedorCripto, validadorDados)
+const usuarioMiddleware = UsuarioMiddleware(repositorioUsuario)
+const obterProdutoPorId = new ObterProdutoPorId()
+const listarUsuarios = new ListarUsuarios(repositorioUsuario)
+const deletarUsuarios = new DeletarUsuarios(repositorioUsuario)
 
+// ----- Rotas abertas
 new RegistrarUsuarioController(app, registrarUsuario)
 new LoginUsuarioController(app, loginUsuario)
 
 // ----- Rotas protegidas
-const usuarioMiddleware = UsuarioMiddleware(repositorioUsuario)
-const obterProdutoPorId = new ObterProdutoPorId()
-const listarUsuarios = new ListarUsuarios(repositorioUsuario)
-
 new ObterProdutoPorIdController(app, obterProdutoPorId, usuarioMiddleware)
 new ListarUsuariosController(app, listarUsuarios, usuarioMiddleware)
+new DeletarUsuariosController(app, deletarUsuarios, usuarioMiddleware)
 
 app.listen(process.env.API_PORT ?? 3000)

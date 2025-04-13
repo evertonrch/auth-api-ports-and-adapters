@@ -22,4 +22,9 @@ export default class RepositorioUsuarioPg implements RepositorioUsuario {
         const sql = "SELECT * FROM usuarios"
         return await db.query(sql)
     }
+    
+    async deletarTudo(): Promise<void> {
+        const sql = "DELETE FROM usuarios"
+        await db.query(sql)
+    }
 }
