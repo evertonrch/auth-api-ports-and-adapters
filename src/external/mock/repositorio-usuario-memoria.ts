@@ -1,5 +1,5 @@
 import RepositorioUsuario from "@/core/usuario/service/repositorio-usuario";
-import Usuario from "../../core/usuario/model/Usuario";
+import Usuario from "../../core/usuario/model/usuario";
 
 export default class RepositorioUsuarioMemoria implements RepositorioUsuario {
 
