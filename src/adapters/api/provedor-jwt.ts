@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken"
-import Usuario from "@/core/usuario/model/usuario";
 
 export default class ProvedorJWT {
 

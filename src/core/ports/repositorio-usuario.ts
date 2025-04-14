@@ -1,5 +1,4 @@
-import Usuario from "../model/Usuario"
-
+import Usuario from "../usuario/model/usuario"
 
 export default interface RepositorioUsuario {
     inserir(usuario: Usuario): Promise<void>
