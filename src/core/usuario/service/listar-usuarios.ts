@@ -1,6 +1,6 @@
 import CasoDeUso from "@/core/shared/caso-de-uso";
-import Usuario from "../model/Usuario";
-import RepositorioUsuario from "./repositorio-usuario";
+import Usuario from "../model/usuario";
+import RepositorioUsuario from "../../ports/repositorio-usuario";
 
 export default class ListarUsuarios implements CasoDeUso<any, Usuario[]> {
 

@@ -1,7 +1,7 @@
-import RepositorioUsuario from "@/core/usuario/service/repositorio-usuario"
+import RepositorioUsuario from "@/core/ports/repositorio-usuario"
 import {Request, Response, NextFunction} from "express"
 import ProvedorJWT from "./provedor-jwt"
-import Usuario from "@/core/usuario/model/Usuario"
+import Usuario from "@/core/usuario/model/usuario"
 import Erros from "@/core/shared/Erros"
 
 export default function UsuarioMiddleware(repositorio: RepositorioUsuario) {

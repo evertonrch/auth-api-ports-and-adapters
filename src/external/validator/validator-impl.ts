@@ -1,5 +1,5 @@
 import validator from "validator"
-import ValidaDados from "@/core/usuario/service/valida-dados";
+import ValidaDados from "@/core/ports/valida-dados";
 
 export default class ValidatorImpl implements ValidaDados {
     

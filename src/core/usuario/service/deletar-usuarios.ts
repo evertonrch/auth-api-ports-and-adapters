@@ -1,5 +1,5 @@
 import CasoDeUso from "@/core/shared/caso-de-uso";
-import RepositorioUsuario from "./repositorio-usuario";
+import RepositorioUsuario from "../../ports/repositorio-usuario";
 
 export default class DeletarUsuarios implements CasoDeUso<any, void> {
 

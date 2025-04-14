@@ -1,5 +1,5 @@
-import Usuario from "@/core/usuario/model/Usuario";
-import RepositorioUsuario from "@/core/usuario/service/repositorio-usuario";
+import Usuario from "@/core/usuario/model/usuario";
+import RepositorioUsuario from "@/core/ports/repositorio-usuario";
 import db from "./db";
 
 export default class RepositorioUsuarioPg implements RepositorioUsuario {

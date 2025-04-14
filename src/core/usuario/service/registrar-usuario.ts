@@ -1,9 +1,9 @@
 import CasoDeUso from "@/core/shared/caso-de-uso";
 import Erros from "@/core/shared/Erros";
 import Id from "@/core/shared/Id";
-import ProvedorCriptografia from "./provedor-criptografia";
-import RepositorioUsuario from "./repositorio-usuario";
-import Usuario from "../model/Usuario";
+import ProvedorCriptografia from "../../ports/provedor-criptografia";
+import RepositorioUsuario from "../../ports/repositorio-usuario";
+import Usuario from "../model/usuario";
 
 export default class RegistrarUsuario implements CasoDeUso<Usuario, void> {
     
@@ -25,5 +25,4 @@ export default class RegistrarUsuario implements CasoDeUso<Usuario, void> {
 
         this.repositorio.inserir(novoUsuario)        
     }
-    
 }

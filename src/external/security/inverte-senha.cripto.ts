@@ -1,4 +1,4 @@
-import ProvedorCriptografia from "../../core/usuario/service/provedor-criptografia";
+import ProvedorCriptografia from "../../core/ports/provedor-criptografia";
 
 export default class InverteSenhaCripto implements ProvedorCriptografia {
     

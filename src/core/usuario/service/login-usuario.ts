@@ -1,9 +1,9 @@
 import CasoDeUso from "@/core/shared/caso-de-uso";
-import Usuario from "../model/Usuario";
-import RepositorioUsuario from "./repositorio-usuario";
-import ProvedorCriptografia from "./provedor-criptografia";
+import Usuario from "../model/usuario";
+import RepositorioUsuario from "../../ports/repositorio-usuario";
+import ProvedorCriptografia from "../../ports/provedor-criptografia";
 import Erros from "@/core/shared/Erros";
-import ValidaDados from "./valida-dados";
+import ValidaDados from "../../ports/valida-dados";
 
 export type LoginRequest = {
     email: string

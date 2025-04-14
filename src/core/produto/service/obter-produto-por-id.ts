@@ -1,6 +1,6 @@
 import CasoDeUso from "@/core/shared/caso-de-uso";
 import Produto from "../model/produto";
-import Usuario from "@/core/usuario/model/Usuario";
+import Usuario from "@/core/usuario/model/usuario";
 
 export type Request = {
     produtoId: string

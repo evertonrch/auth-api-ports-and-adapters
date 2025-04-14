@@ -1,5 +1,5 @@
 import bcrypt, { genSaltSync } from "bcrypt"
-import ProvedorCriptografia from "@/core/usuario/service/provedor-criptografia";
+import ProvedorCriptografia from "@/core/ports/provedor-criptografia";
 
 export default class BcryptSenhaCripto implements ProvedorCriptografia {
     
