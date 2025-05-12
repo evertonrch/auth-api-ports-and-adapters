@@ -23,7 +23,8 @@ Essa abordagem promove um design modular e facilita a substituição de componen
 - **Node.js**
 - **Express.js**
 - **TypeScript**
-- **ESLint** e **Prettier** (para padronização de código)
+- **PostgreSQL**
+- **Docker & Docker Compose**
 
 ---
 
@@ -32,16 +33,13 @@ Essa abordagem promove um design modular e facilita a substituição de componen
 ```
 auth-api-ports-and-adapters/
 ├── src/
-│ ├── application/ # Casos de uso (use cases)
-│ ├── domain/ # Entidades e interfaces do domínio
-│ ├── infrastructure/ # Implementações de adaptadores (ex: repositórios, serviços externos)
-│ ├── interfaces/ # Interfaces de entrada (ex: controllers, rotas)
-│ └── shared/ # Utilitários e configurações compartilhadas
+│ ├── adapters/ # Implementações de adaptadores (API, DB...)
+│ ├── core/ # Domínio (Casos de uso, portas, entidades)
+│ ├── index.js
 ├── .env # Variáveis de ambiente
 ├── package.json
 └── tsconfig.json
 ```
-
 
 ---
 
@@ -60,14 +58,25 @@ cd auth-api-ports-and-adapters
 npm install
 ```
 
-3. Configure as variáveis de ambiente:
+3. Configure as variáveis de ambiente (crie um arquivo .env):
 
 ```
-PORT=3000
-JWT_SECRET=sua_chave_secreta
+DB_HOST=host_do_banco
+DB_PORT=porta_do_banco
+DB_USER=usuário_do_banco
+DB_PASSWORD=senha_de_usuário_do_banco
+DB_NAME=nome_do_banco
+API_PORT=porta_da_api
+JWT_SECRET=secret_do_jwt
 ```
 
-4. Execute a aplicação:
+4. Configure o serviço e execute o container do postgres:
+
+```
+docker compose up -d
+```
+
+5. Execute a aplicação:
 
 ```
 npm run dev
